@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: rgb(6, 22, 20);
+    overflow: hidden;
+}
+nav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo{
+    color:  rgb(23,185,164);
+    font-size: 1.9rem;
+    font-family: "Poetsen One", sans-serif;
+    margin-left: 50px;
+    animation: move-left 1s;
+    
+}
+nav .logo span{
+    color: rgb(160,242,232);
+    font-size: 2.5rem;
+}
+nav ul{
+    display: flex;
+   
+}
+nav li a{
+    color: rgb(101,238,220);
+    font-size: 1.2rem;
+    font-family: "Poetsen One", sans-serif;
+    text-transform: capitalize;
+    margin: 0 50px;
+    transition: 0.2s;
+    display: inline-block;
+    transform: scale(1);
+    animation: move-top .5s forwards;
+    animation-delay:.5s ;
+    opacity: 0;
+}
+nav li a:hover{
+    color: rgb(23,185,164);
+    transform: scale(1.02);
+    letter-spacing: .3px;
+}
+.line{
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: aqua;
+    scale: 0;
+    animation:zoom 1.5s ease-out;
+    transform-origin: left;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 45% 5%;
+    
+}
+main .image .circle{
+    width: 420px;
+    height: 420px;
+    background: linear-gradient(rgb(101,238,220),rgb(160,242,232),rgb(23,185,164));
+    border-radius: 50%;
+    filter: blur(1px);
+    position: relative;
+    margin-left: 250px;
+    animation:zoom 1s ;
+    margin-top: 200px;
+}
+
+.circle::after{
+    content: '';
+    width: 350px;
+    height: 350px;
+    background-color: rgb(6, 22, 20);
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+}
+
+img{
+    position: absolute;
+    top: 250px;
+    left: 50vw;
+    animation:zoom 1s forwards;
+    animation-delay: 0.1s;
+    scale: 0;
+transform-origin: right;
+}
+.info{
+    margin: 200px 0 0 100px;
+    
+}
+.info h1{
+    font-size: 50px;
+    color:  rgb(160,242,232);
+    font-family: "Poetsen One", sans-serif;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: move-left .5s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+.info p{
+    color: aliceblue;
+    font-family: "Poetsen One", sans-serif;
+    line-height: 25px;
+    letter-spacing: .5px;
+    animation: move-top .5s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+.info button{
+    width: 120px;
+    height: 40px;
+    margin: 20px 0 0 10px;
+    background: linear-gradient(45deg,rgb(101,238,220),rgb(160,242,232),rgb(23,185,164));
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: "Poetsen One", sans-serif;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    transition:all .5s;
+    color: black;
+    animation:zoom .5s forwards;
+    animation-delay: 1s;
+    scale: 0;
+}
+.info button:hover{
+    scale: 1.03;
+    background: linear-gradient(315deg,rgb(101,238,220),rgb(160,242,232),rgb(23,185,164));
+    
+}
+
+.social{
+    height: 100%;
+    width: 40px;   
+}
+
+@keyframes move-left {
+    from{
+      transform: translateX(-50px);
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+}
+@keyframes move-top {
+    from{
+      transform: translateY(50px);
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes zoom {
+    from{
+      transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+        scale: 1;
+    }
+    
+}
